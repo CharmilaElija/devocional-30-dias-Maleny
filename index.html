@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 Dias - Maleny Lemos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#fff5f7;color:#4a2a32}
+.hero{
+    min-height:85vh;
+    background: linear-gradient(90deg, rgba(120,30,60,0.90) 0%, rgba(200,80,120,0.65) 50%, rgba(255,182,193,0.3) 100%), url('IMG_9239.jpg');
+    background-size:cover; background-position:center;
+    display:flex; align-items:center; padding:40px;
+    color:white; position:relative;
+  }
+.hero-content{max-width:600px; z-index:2}
+.logo{font-size:13px; letter-spacing:3px; opacity:0.8; margin-bottom:60px; display:block; font-weight:600}
+.hero h1{
+    font-family:'Anton',sans-serif; font-size:50px; line-height:0.95;
+    text-transform:uppercase; letter-spacing:1px; margin-bottom:15px; color:white;
+  }
+.hero p{font-size:18px; opacity:0.9; margin-bottom:30px; font-weight:400}
+.btn-branco{
+    background:white; color:#a8325a; border:none; padding:16px 36px;
+    border-radius:100px; font-weight:700; font-size:16px; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  }
+.badge{
+    display:inline-block; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.3);
+    padding:8px 16px; border-radius:100px; font-size:11px; margin-top:20px; backdrop-filter:blur(10px); letter-spacing:1px;
+  }
+.container{max-width:800px;margin:0 auto;padding:20px;background:#fff5f7;min-height:50vh}
+.menu{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:20px 0}
+.menu button{border:1px solid #ffd1dc;background:white;padding:12px;border-radius:12px;cursor:pointer;font-weight:700;color:#a8325a}
+.menu button.active,.menu button:hover{background:#a8325a;color:white}
+.card{background:white;border-radius:20px;padding:32px;box-shadow:0 10px 30px rgba(168,50,90,0.1);margin-top:20px;border:1px solid #ffe4ea}
+.card h2{font-family:'Anton',sans-serif;font-size:26px;color:#a8325a;text-transform:uppercase;letter-spacing:0.5px}
+.versiculo{background:#a8325a;color:white;display:inline-block;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:700;margin:15px 0}
+.bloco{background:#fff0f3;padding:18px;border-radius:14px;margin:16px 0;border-left:4px solid #ffb6c1}
+.label{font-size:10px;letter-spacing:2px;font-weight:700;opacity:0.6;margin-bottom:6px;color:#a8325a}
+.nav{display:flex;justify-content:space-between;margin-top:24px;gap:12px}
+.nav button{flex:1;background:#a8325a;color:white;border:none;padding:16px;border-radius:100px;cursor:pointer;font-weight:700}
+.progress{height:6px;background:#ffd1dc;border-radius:100px;overflow:hidden;margin:0 0 20px 0}
+.progress div{height:100%;background:#a8325a}
+  footer{text-align:center;padding:30px;font-size:11px;letter-spacing:1px;opacity:0.6;color:#a8325a}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-content">
+    <span class="logo">FÉ & PALAVRA • ROSA BEBÊ EDITION</span>
+    <h1>30 DIAS DE<br>DECLARAÇÕES<br>& ORAÇÕES</h1>
+    <p>Eu sou quem Deus diz que eu sou</p>
+    <button class="btn-branco" onclick="document.querySelector('.container').scrollIntoView({behavior:'smooth'})">Começar Agora</button>
+    <br>
+    <div class="badge">PERSONALIZADO PARA MALENY LEMOS • 30 DIAS</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="progress"><div id="barra"></div></div>
+  <div class="menu" id="menu"></div>
+  <div class="card" id="card"></div>
+  <div class="nav">
+    <button onclick="mudar(-1)">← ANTERIOR</button>
+    <button onclick="mudar(1)">PRÓXIMO →</button>
+  </div>
+  <footer>MALENY LEMOS • FEITO COM AMOR POR CHARMILA ELIJA • 2026<br>M-PESA 850730250 • E-MOLA 861568130</footer>
+</div>
+
+<script>
+const devocional = [
+  {t:"Dia 1 - Eu sou amada e escolhida", v:"Efésios 1:4", d:"Eu sou escolhida, amada e aceita por Deus desde antes da fundação do mundo. Eu não sou um erro, sou parte do plano perfeito de Deus. Maleny, você é especial para Deus!", o:"Pai querido, obrigada por me escolher e me amar mesmo com minhas falhas. Hoje eu, Maleny, recebo o Teu amor e rejeito toda rejeição. Que eu me sinta amada e escolhida por Ti. Em nome de Jesus, Amém."},
+  {t:"Dia 2 - Eu tenho paz", v:"Filipenses 4:7", d:"Eu, Maleny Lemos, tenho a paz de Deus que excede todo entendimento guardando meu coração e minha mente. A ansiedade não tem domínio sobre mim.", o:"Senhor, entrego toda ansiedade em Tuas mãos. Que Tua paz, que vai além da minha compreensão, guarde meu coração, Maleny. Eu escolho descansar em Ti hoje. Amém."},
+  {t:"Dia 3 - Eu sou forte e corajosa", v:"Isaías 41:10", d:"Eu, Maleny, sou forte e corajosa. Não temerei, pois o Senhor meu Deus está comigo por onde eu for. Eu não vou desistir.", o:"Deus, quando eu sou fraca, Tu és a minha força. Renova as forças de Maleny como as da águia hoje. Eu declaro que sou forte em Ti. Amém."},
+  {t:"Dia 4 - Meu futuro é de esperança", v:"Jeremias 29:11", d:"O meu futuro, Maleny Lemos, está nas mãos de Deus e os planos Dele para mim são de paz, esperança e um futuro brilhante.", o:"Pai, eu, Maleny, confio nos Teus planos. Mesmo quando não entendo, eu sei que o Senhor tem o melhor para mim. Eu entrego meu futuro a Ti. Amém."},
+  {t:"Dia 5 - Eu sou perdoada", v:"1 João 1:9", d:"Eu, Maleny, sou completamente perdoada e purificada pelo sangue de Jesus. Eu não carrego mais culpa, vergonha ou condenação.", o:"Obrigada, Jesus, pelo Teu perdão. Hoje eu, Maleny, me perdoo também. Eu deixo a culpa e recebo Tua graça. Amém."},
+  {t:"Dia 6 - Sou mais que vencedora", v:"Romanos 8:37", d:"Em todas as coisas eu, Maleny Lemos, sou mais que vencedora por meio Daquele que me amou. Nenhuma luta vai me parar.", o:"Senhor, hoje Maleny não vai reclamar da luta, vai declarar vitória. Eu sou mais que vencedora em Cristo Jesus. Amém."},
+  {t:"Dia 7 - Sou grata e abençoada", v:"Salmos 103:2-5", d:"Eu, Maleny, sou abençoada com todos os benefícios de Deus. Minha boca se encherá de gratidão e minha vida de Seus favores.", o:"Pai, abre meus olhos para ver quantas bênçãos já tenho. Obrigada pela vida, saúde e família. Eu, Maleny, escolho ser grata hoje. Amém."},
+  {t:"Dia 8 - Sou curada e restaurada", v:"Isaías 53:5", d:"Pelas feridas de Jesus eu, Maleny Lemos, fui sarada. Meu coração, minhas emoções e meu corpo estão sendo curados a cada dia.", o:"Jesus, Tu levaste minhas dores na cruz. Toca agora meu coração ferido e meu corpo, Maleny. Eu recebo Tua cura completa. Amém."},
+  {t:"Dia 9 - Tenho alegria verdadeira", v:"Neemias 8:10", d:"A alegria do Senhor é a minha força, Maleny. Minha alegria não depende das circunstâncias, mas da presença de Deus em mim.", o:"Senhor, enche-me de alegria hoje. Que eu, Maleny, sorria mesmo nas dificuldades, porque Tu és minha força. Amém."},
+  {t:"Dia 10 - Sou confiante e sem medo", v:"Salmos 27:1", d:"O Senhor é a minha luz e a minha salvação, de quem terei medo? Eu, Maleny Lemos, ando com confiança e cabeça erguida.", o:"Pai, tira todo medo e insegurança de Maleny. Eu sou Tua filha, eu não preciso ter medo do amanhã. Amém."},
+  {t:"Dia 11 - Tenho sabedoria", v:"Tiago 1:5", d:"Deus me dá, Maleny, sabedoria generosamente para tomar as decisões certas. Eu tenho a mente de Cristo.", o:"Deus, Maleny precisa de sabedoria hoje para decidir, para falar e para agir. Guia meus pensamentos e palavras. Amém."},
+  {t:"Dia 12 - Sou paciente e esperançosa", v:"Salmos 40:1", d:"Eu, Maleny, esperei com paciência no Senhor e Ele me ouviu. Eu sei esperar o tempo de Deus porque o tempo Dele é perfeito.", o:"Senhor, ensina Maleny a esperar sem reclamar. O Teu tempo é melhor que o meu. Eu confio. Amém."},
+  {t:"Dia 13 - Sou amada incondicionalmente", v:"Romanos 8:38-39", d:"Nada pode separar Maleny Lemos do amor de Deus. Nem altura, nem profundidade, nem passado, nem erro. Eu sou eternamente amada.", o:"Obrigada por nunca desistir de Maleny, Deus. Mesmo quando eu falho, Teu amor continua. Eu recebo esse amor hoje. Amém."},
+  {t:"Dia 14 - Tenho domínio próprio", v:"2 Timóteo 1:7", d:"Deus não deu a Maleny espírito de medo, mas de poder, amor e equilíbrio. Eu tenho domínio sobre minhas emoções e atitudes.", o:"Espírito Santo, domina as emoções de Maleny hoje. Que ela não aja por impulso, mas com sabedoria e equilíbrio. Amém."},
+  {t:"Dia 15 - Sou criada com propósito", v:"Efésios 2:10", d:"Eu, Maleny Lemos, sou feitura de Deus, criada em Cristo Jesus para boas obras. Minha vida tem propósito, eu não estou aqui por acaso.", o:"Pai, mostra a Maleny o seu propósito hoje. Usa a vida dela para abençoar alguém. Ela quer viver para o que realmente importa. Amém."},
+  {t:"Dia 16 - Sou guiada por Deus", v:"Salmos 32:8", d:"O Senhor instrui Maleny e ensina o caminho que deve seguir. Ele a guia com Seus olhos amorosos sobre ela.", o:"Senhor, guia os passos de Maleny hoje. Fecha as portas erradas e abre as certas. Ela quer andar no Teu caminho. Amém."},
+  {t:"Dia 17 - Nada me faltará", v:"Salmos 23:1", d:"O Senhor é o Pastor de Maleny e nada lhe faltará. Ele supre todas as suas necessidades com Sua riqueza e glória.", o:"Meu Pastor, obrigada porque cuidas de Maleny. Entrega as contas e medos financeiros dela em Tuas mãos. Supre hoje. Amém."},
+  {t:"Dia 18 - Sou nova criatura", v:"2 Coríntios 5:17", d:"Maleny Lemos é nova criatura em Cristo. As coisas velhas passaram, tudo se fez novo. O passado dela não a define mais.", o:"Jesus, obrigada pela nova vida de Maleny. Hoje ela deixa o passado para trás. Ela é nova, limpa e recomeça em Ti. Amém."},
+  {t:"Dia 19 - Tenho fé que move montanhas", v:"Mateus 17:20", d:"Maleny tem fé, mesmo pequena como um grão de mostarda, mas essa fé pode mover montanhas na vida dela.", o:"Senhor, aumenta a fé de Maleny hoje. Mesmo com dúvidas, ela escolhe crer que o impossível vai acontecer. Amém."},
+  {t:"Dia 20 - Sou resiliente e firme", v:"Salmos 46:1", d:"Deus é refúgio e fortaleza de Maleny, socorro bem presente na angústia. Ela pode cair, mas vai se levantar mais forte.", o:"Deus, sustenta Maleny quando ela quiser desistir. Seja o refúgio dela hoje. Ela se levanta novamente em Teu nome. Amém."},
+  {t:"Dia 21 - Cheia do Espírito Santo", v:"Atos 1:8", d:"Maleny Lemos recebe poder ao descer sobre ela o Espírito Santo. Ela tem ousadia, coragem e poder para testemunhar.", o:"Espírito Santo, enche Maleny hoje de novo. Tira a timidez e dá ousadia para falar do Teu amor. Amém."},
+  {t:"Dia 22 - Eu sou luz no mundo", v:"Mateus 5:14", d:"Maleny é a luz do mundo. Uma cidade sobre o monte não se pode esconder. A luz dela vai brilhar onde ela estiver.", o:"Senhor, que a vida de Maleny brilhe hoje. Que suas atitudes, palavras e sorriso mostrem Jesus às pessoas. Amém."},
+  {t:"Dia 23 - Abençoada para abençoar", v:"Gênesis 12:2", d:"Maleny Lemos é abençoada para ser uma bênção. Sua vida, seu trabalho e suas palavras abençoam outros.", o:"Pai, usa Maleny hoje para abençoar alguém. Que ela seja resposta de oração para outra pessoa. Amém."},
+  {t:"Dia 24 - Minhas palavras têm poder", v:"Provérbios 18:21", d:"A morte e a vida estão no poder da língua de Maleny. Hoje ela escolhe falar vida, bênção, esperança e vitória.", o:"Senhor, guarda a boca de Maleny hoje. Que ela não fale maldição, reclamação, mas só palavras que curam e edificam. Amém."},
+  {t:"Dia 25 - Sou próspera em tudo", v:"Salmos 1:3", d:"Maleny é como árvore plantada junto a ribeiros de águas. Tudo quanto ela fizer prosperará no tempo certo.", o:"Deus, abençoa o trabalho das mãos de Maleny hoje. Que ela prospere, cresça e veja Teu favor sobre ela. Amém."},
+  {t:"Dia 26 - Meu lar tem paz", v:"Josué 24:15", d:"Maleny e a sua casa servirão ao Senhor. O lar dela é cheio de paz, amor, respeito e presença de Deus.", o:"Senhor, entra no lar de Maleny hoje. Tira toda briga, confusão e traz paz, união e amor para a família dela. Amém."},
+  {t:"Dia 27 - Corajosa para recomeçar", v:"Deuteronômio 31:6", d:"Maleny Lemos é forte e corajosa, não temerá, pois o Senhor seu Deus vai com ela. Ele nunca a deixará nem a desamparará.", o:"Pai, dá coragem para Maleny recomeçar o que precisa. Ela não está sozinha, Tu vais com ela em cada passo. Amém."},
+  {t:"Dia 28 - Curada no corpo e na alma", v:"Êxodo 15:26", d:"O Senhor é o médico de Maleny, Ele é Jeová Rafá, o Deus que a cura de toda enfermidade física e emocional.", o:"Deus, Tu és o médico de Maleny. Toca o corpo, a mente e o coração dela hoje. Ela recebe Tua saúde completa. Amém."},
+  {t:"Dia 29 - Protegida e guardada", v:"Salmos 91:11", d:"O Senhor dá ordens aos Seus anjos a respeito de Maleny Lemos para a guardarem em todos os seus caminhos. Ela está segura.", o:"Pai, obrigada pela proteção sobre Maleny. Guarda-a hoje de todo acidente, inveja e mal. Que Teus anjos acampem ao redor dela. Amém."},
+  {t:"Dia 30 - Infinitamente amada e completa", v:"Sofonias 3:17", d:"O Senhor Deus está no meio de Maleny como poderoso para salvar. Ele se alegra nela com cânticos de amor. Maleny é completa Nele.", o:"Deus, obrigada por esses 30 dias de Maleny. Hoje ela declara que é infinitamente amada, completa, feliz e realizada em Ti. Que venham mais 30 dias de vitórias! Em nome de Jesus, Amém."}
+];
+
+let atual=0;
+const menu=document.getElementById('menu');
+const card=document.getElementById('card');
+const barra=document.getElementById('barra');
+
+devocional.forEach((item,i)=>{
+  const b=document.createElement('button');
+  b.innerText=(i+1);
+  b.onclick=()=>mostrar(i);
+  menu.appendChild(b);
+});
+
+function mostrar(i){
+  atual=i;
+  const item=devocional[i];
+  card.innerHTML=`
+    <h2>${item.t}</h2>
+    <div class="versiculo">📖 ${item.v}</div>
+    <div class="bloco"><div class="label">DECLARAÇÃO DO DIA</div><div style="font-weight:700;font-size:15px;line-height:1.5">${item.d}<br><br>🗣️ Declare 3x em voz alta hoje, Maleny!</div></div>
+    <div class="bloco"><div class="label">ORAÇÃO DO DIA</div><div style="line-height:1.6">${item.o}</div></div>
+    <div style="margin-top:15px;font-size:11px;opacity:0.5">✨ Dia ${i+1} de 30 • Para Maleny Lemos • Rosa Bebê</div>
+  `;
+  document.querySelectorAll('.menu button').forEach((b,idx)=>b.classList.toggle('active', idx===i));
+  barra.style.width=((i+1)/30*100)+'%';
+}
+
+function mudar(dir){
+  let novo=atual+dir;
+  if(novo<0) novo=29;
+  if(novo>29) novo=0;
+  mostrar(novo);
+  window.scrollTo({top:document.querySelector('.container').offsetTop, behavior:'smooth'});
+}
+
+mostrar(0);
+</script>
+</body>
+</html>
